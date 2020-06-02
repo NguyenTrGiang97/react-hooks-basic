@@ -26,7 +26,6 @@ function App() {
             // console.log({responseJSON});
 
             const { data } = responseJSON;
-            console.log(data);
 
             setPostList(data);
          } catch (error) {
