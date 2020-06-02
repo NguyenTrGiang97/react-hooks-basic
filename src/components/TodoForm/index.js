@@ -27,7 +27,7 @@ function TodoForm(props) {
         };
 
         onSubmit(formValues);
-        setValue('');
+        setValue(''); 
     }
 
     return (
