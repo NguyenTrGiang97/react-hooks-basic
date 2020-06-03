@@ -57,7 +57,7 @@ function App() {
 
             const { data, pagination } = responseJSON;
             console.log(data);
-            
+             
             setPostList(data);
             setPagination(pagination);
 

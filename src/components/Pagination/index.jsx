@@ -17,7 +17,7 @@ function Pagination(props) {
     const totalPages = Math.ceil(_totalRows/ _limit);
     // tổng item / số item từng page
     // 51/10 = 5.1 ---> Math.ceil > lấy 6 page
-
+    
     function handlePageChange(newPage) {
         if (onPageChange) {
             onPageChange(newPage)
