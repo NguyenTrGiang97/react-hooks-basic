@@ -7,6 +7,8 @@ import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';
 import PostList from './components/PostList';
 import Pagi from './components/Pagination/index';
+import PostFiltersForm from './components/PostFiltersForm';
+import Clock from './components/Clock';
 
 function App() {
 
@@ -29,7 +31,8 @@ function App() {
    // dependencies 
    const [filter, setFilter] = useState({
       _limit: 10,
-      _page: 1
+      _page: 1,
+      title_like: '',
    })
 
    function handlePageChangee(newPage) {
@@ -97,6 +100,16 @@ function App() {
       setTodoList(newTodoList);
    }
 
+   function handleFiltersChange(newFilters) {
+      console.log("new filters: ", newFilters);
+      setFilter({
+         ...filter,
+         _page: 1,
+         title_like: newFilters.searchTerm
+      })
+      
+   }
+
    return (
       <div className="App">
          <h1>Hello ^__^</h1>
@@ -105,9 +118,11 @@ function App() {
          {/* <TodoList todos={todoList} onTodoClick = {handleTodoClick} /> */}
 
          {/* <TodoForm  onSubmit={handleTodoFormSubmit} /> */}
-
+         {/* <PostFiltersForm onSubmit={handleFiltersChange} />
          <PostList posts={postList} />
-         <Pagi pagination={pagination} onPageChange={handlePageChangee} />
+         <Pagi pagination={pagination} onPageChange={handlePageChangee} /> */}
+      
+         <Clock />
       </div>
    );
 }
