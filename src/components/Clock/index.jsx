@@ -26,7 +26,6 @@ function Clock() {
         }, 1000);
 
         return () => {
-            console.log('clock cleanup');
             clearInterval(clockInterval);
         }
     }, [])
