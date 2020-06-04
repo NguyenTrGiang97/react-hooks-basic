@@ -1,0 +1,31 @@
+import { useEffect, useState } from 'react';
+
+function formatDate(nowD) {
+
+    const hours = `0${nowD.getHours()}`.slice(-2);
+    const minutes = `0${nowD.getMinutes()}`.slice(-2);
+    const seconds = `0${nowD.getSeconds()}`.slice(-2);
+
+    return `${hours}:${minutes}:${seconds}`;
+}
+
+function useClock() {
+    const [timeString, SetTimeString] = useState('');
+
+    useEffect(() => {
+        const clockInterval = setInterval(() => {
+            const now = new Date();
+            const newTimeString = formatDate(now);
+
+            SetTimeString(newTimeString);
+        }, 1000);
+
+        return () => {
+            clearInterval(clockInterval);
+        }
+    }, [])
+
+    return {timeString}
+}
+
+export default useClock;

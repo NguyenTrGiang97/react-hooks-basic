@@ -9,6 +9,8 @@ import PostList from './components/PostList';
 import Pagi from './components/Pagination/index';
 import PostFiltersForm from './components/PostFiltersForm';
 import Clock from './components/Clock';
+import BetterClock from './components/BetterClock';
+import MagicBox from './components/MagicBox';
 
 function App() {
 
@@ -122,7 +124,11 @@ function App() {
          <PostList posts={postList} />
          <Pagi pagination={pagination} onPageChange={handlePageChangee} /> */}
       
-         <Clock />
+         {/* <Clock />
+         <BetterClock /> */}
+
+         <MagicBox />
+         
       </div>
    );
 }
